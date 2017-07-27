@@ -1,62 +1,75 @@
-baseurl = "smsalaken.github.io"
-relativeurls = false
-languageCode = "en-us"
+baseurl = "http://smsalaken.github.io"
 title = "Salekin Mushfik"
-theme = "hugo-geo"
-googleAnalytics = ""
-disqusShortname = ""
-ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
+languageCode = "en-us"
+#disqusShortname = "your_disqus_shortname" # Optional, enable Disqus integration
+MetaDataFormat = "toml"
+theme = "hyde-x"
+paginate = 10
+
+[author]
+    name = "Salekin Mushfik"
 
 [permalinks]
-    post = "/:year/:month/:day/:slug/"
+    # Optional. Change the permalink format for the 'post' content type.
+    # The format shown here is the same one Jekyll/Octopress uses by default.
+    post = "/blog/:year/:month/:day/:title/"
 
-[[menu.main]]
-    name = "About"
-    url = "/about/"
-[[menu.main]]
-    name = "GitHub"
-    url = "https://github.com/rstudio/blogdown"
-[[menu.main]]
-    name = "Twitter"
-    url = "https://twitter.com/rstudio"
+[taxonomies]
+    # Optional. Use if you want tags and lists.
+    category = "categories"
 
+#
+# All parameters below here are optional and can be mixed and matched.
+#
 [params]
-	title = "Salekin Mushfik"
-	subtitle = "All things data"
-    description = "Personal website for Salekin Mushfik"
-	header = "Thoughts and code snippets"
-	
-	# Sidebar profile picture
-	profilepic = "img/sal.png" 
-	
-    # options for highlight.js (version, additional languages, and theme)
-    highlightjsVersion = "9.11.0"
-    highlightjsCDN = "//cdn.bootcss.com"
-    highlightjsLang = ["r", "yaml"]
-    highlightjsTheme = "github"
+	description = 'Apparently random analysis and code snippets.'
+    # If false display full article contents in blog index.
+    # Otherwise show description and 'read on' link to individual blog post page.
+    # Default (if omitted) is true.
+    truncate = true
 
-    MathJaxCDN = "//cdn.bootcss.com"
-    MathJaxVersion = "2.7.1"
-	
-	
-	
-	# Social buttons for sidebar
-	# Each of these are optional
-	[[params.socialbuttons]]
-	faicon = "github"
-	url = "https://github.com/smsalaken"
-	
-	[[params.socialbuttons]]
-	faicon = "linkedin"
-	url = "https://www.linkedin.com/in/salaken/"
-	[[params.socialbuttons]]
-	faicon = "envelope-o"
-	url = "mailto:s.m.salaken@gmail.com"
+    # Used when a given page doesn't set its own.
+    defaultDescription = "Random things on data science and machine learning by Salekin Mushfik"
+    defaultKeywords = "Salekin,Data Scientist in Melbourne,Machine learning,Data Engineer in Melbourne, Australia"
 
+    # Hide estimated reading time for posts.
+    # Default (if omitted) is false.
+    hideReadingTime = false
 
-    [params.logo]
-    url = "logo.png"
-    width = 50
-    height = 50
-    alt = "Logo"
+    # Changes sidebar background and link/accent colours.
+    # See below for more colour options.
+    # This also works: "theme-base-08 layout-reverse", or just "layout-reverse".
+    theme = "theme-base-0d"
 
+    # Select a syntax highight.
+    # Check the static/css/highlight directory for options.
+    highlight = "sunburst"
+
+    # Optional additional custom CSS file URL, will override other styles.
+    customCSS = ""
+
+    # Displays under the author name in the sidebar, keep it short.
+    # You can use markdown here.
+    tagline = "Thoughts, Analysis and Code Snippets."
+
+    # Text for the top menu link, which goes the root URL for the site.
+    # Default (if omitted) is "Blog".
+    home = "Blog"
+
+    # Metadata used to drive integrations.
+    #googleAnalytics = "Your Google Analytics tracking code"
+    #gravatarHash = "MD5 hash of your Gravatar email address"
+
+    # Sidebar social links, these must be full URLs.
+    github = "http://github.com/smsalaken"
+    #bitbucket = ""
+    #stackOverflow = ""
+    linkedin = "http://linkedin.com/in/salaken"
+    #googleplus = ""
+    #facebook = ""
+    twitter = ""
+    #youtube = ""
+
+    # Other social-like sidebar links
+    rss = true  # switch to true to enable RSS icon link
+    #flattr = ""  # populate with your flattr uid
