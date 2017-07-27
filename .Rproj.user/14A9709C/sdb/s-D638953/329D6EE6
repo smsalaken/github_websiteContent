@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "---\ntitle: Test hugo post\nauthor: ~\ndate: '2017-07-26'\nslug: test-hugo-post\ncategories: []\ntags: []\ncss: []\ndescription: ''\nhighlight: yes\nscripts: []\ndraft: true\n---\n\nI am testing hugo blog posts.",
+    "created" : 1501071141912.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3111536639",
+    "id" : "329D6EE6",
+    "lastKnownWriteTime" : 1501072490,
+    "last_content_update" : 1501072490724,
+    "path" : "~/my_githubPageWebsite/hugo_webContent/content/post/2017-07-26-test-hugo-post.md",
+    "project_path" : "content/post/2017-07-26-test-hugo-post.md",
+    "properties" : {
+        "docOutlineVisible" : "0"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

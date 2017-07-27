@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "---\ntitle: \"Dual y-axis in ggplot\"\nauthor: \"Salekin Mushfik\"\ndate: 2017-07-27T09:13:14-05:00\ncategories: [\"R\", \"ggplot\"]\ntags: [\"visualization\", \"ggplotplot\"]\n---\n\n```{r setup, include=FALSE}\nknitr::opts_chunk$set(collapse = TRUE)\n```\n\n# Dual y-axis in ggplot\n\nDouble vertical axis is a farily common requirement by the analysts. \nYou can embed an R code chunk like this:\n\n```{r cars}\nsummary(cars)\nfit <- lm(dist ~ speed, data = cars)\nfit\n```\n\n# Including Plots\n\nYou can also embed plots. See Figure \\@ref(fig:pie) for example:\n\n```{r pie, fig.cap='A fancy pie chart.', tidy=FALSE}\npar(mar = c(0, 1, 0, 1))\npie(\n  c(280, 60, 20),\n  c('Sky', 'Sunny side of pyramid', 'Shady side of pyramid'),\n  col = c('#0292D8', '#F7EA39', '#C4B632'),\n  init.angle = -50, border = NA\n)\n```\n",
+    "created" : 1501111568825.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4188315557",
+    "id" : "2E8A71F0",
+    "lastKnownWriteTime" : 1501111790,
+    "last_content_update" : 1501111790218,
+    "path" : "~/my_githubPageWebsite/hugo_webContent/content/post/2015-07-23-r-rmarkdown.Rmd",
+    "project_path" : "content/post/2015-07-23-r-rmarkdown.Rmd",
+    "properties" : {
+        "source_window_id" : ""
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
