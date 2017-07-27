@@ -1,5 +1,5 @@
 baseurl = "smsalaken.github.io"
-relativeurls = true
+relativeurls = false
 languageCode = "en-us"
 title = "Salekin Mushfik"
 theme = "hugo-geo"
@@ -21,11 +21,13 @@ ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
     url = "https://twitter.com/rstudio"
 
 [params]
+	title = "Salekin Mushfik"
+	subtitle = "All things data"
     description = "Personal website for Salekin Mushfik"
 	header = "Thoughts and code snippets"
 	
 	# Sidebar profile picture
-	profilepic = "static/img/sal.png" 
+	profilepic = "img/sal.png" 
 	
     # options for highlight.js (version, additional languages, and theme)
     highlightjsVersion = "9.11.0"
@@ -38,11 +40,19 @@ ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
 	
 	
 	
-	#Social buttons for sidebar
+	# Social buttons for sidebar
 	# Each of these are optional
 	[[params.socialbuttons]]
-	favicon = "github"
+	faicon = "github"
 	url = "https://github.com/smsalaken"
+	
+	[[params.socialbuttons]]
+	faicon = "linkedin"
+	url = "https://www.linkedin.com/in/salaken/"
+	[[params.socialbuttons]]
+	faicon = "envelope-o"
+	url = "mailto:s.m.salaken@gmail.com"
+
 
     [params.logo]
     url = "logo.png"
