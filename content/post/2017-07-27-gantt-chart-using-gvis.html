@@ -1,0 +1,55 @@
+---
+title: Gantt chart using Gvis
+author: Salekin Mushfik
+date: '2017-07-27'
+slug: gantt-chart-using-gvis
+categories:
+  - visualization
+tags:
+  - gvis
+output: 
+  html_document: 
+    fig_caption: yes
+---
+
+
+
+<p>Gantt chart can be very useful to visualize the occurance of certain events on a timeline. If you need create one programmetically, you can use gvis package which utilizes plotting library from Google.</p>
+<pre class="r"><code># get the data
+df &lt;- data_get() # make sure you get the data here
+
+
+
+# convert time to decimal hours, remove if not required
+df$start.ct   &lt;- as.POSIXct(paste(df$`Date Time`, df$start, sep = &quot; &quot;))
+df$end.ct     &lt;- as.POSIXct(paste(df$`Date Time`, df$end, sep = &quot; &quot;))
+df$start.hour &lt;- as.POSIXlt(df$start.ct)$hour + as.POSIXlt(df$start.ct)$min/60 + as.POSIXlt(df$start.ct)$sec/3600
+df$end.hour   &lt;- as.POSIXlt(df$end.ct)$hour + as.POSIXlt(df$end.ct)$min/60 + as.POSIXlt(df$end.ct)$sec/3600
+
+# do this if your start time and end time is same in the df
+# add one hour to start time if this is hourly, remove if needed
+df$endTime &lt;- df$start.ct+3600              
+
+library(googleVis)
+datTL &lt;- data.frame(Position=&#39;&#39;,            # bar labels
+                    Name=df$`Child Object`, # the row label for Gantt charts
+                    start=df$start.ct,      # the start time
+                    end=df$endTime)         # the end time
+
+# the actual Gantt chart. If using in shiny, render via renderGvis
+Timeline &lt;- 
+  gvisTimeline(
+    data=datTL, 
+    rowlabel=&quot;Name&quot;,
+    barlabel=&quot;Position&quot;,
+    start=&quot;start&quot;, 
+    end=&quot;end&quot;,
+    options=list(timeline=&quot;{groupByRowLabel:true}&quot;,  # one row for one label
+                width=&#39;100%&#39;,                        
+                height=700,                          
+                backgroundColor=&#39;#ffd&#39;, 
+                height=350,
+                colors=&quot;[&#39;#cbb69d&#39;, &#39;#603913&#39;, &#39;#c69c6e&#39;]&quot;))  # what colors do you want on the chart?
+
+# testing the code
+cat(&#39;class Timeline:&#39;, class(Timeline),&#39;\n&#39;)         # It should be a gvis class</code></pre>

@@ -1,7 +1,7 @@
 baseurl = "/"
 relativeurls = true
 languageCode = "en-us"
-title = "A Hugo website"
+title = "Salekin Mushfik"
 theme = "hugo-geo"
 googleAnalytics = ""
 disqusShortname = ""
@@ -21,7 +21,8 @@ ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
     url = "https://twitter.com/rstudio"
 
 [params]
-    description = "A website built through Hugo and blogdown."
+    description = "Personal website for Salekin Mushfik"
+	header = "Thoughts and code snippets"
 
     # options for highlight.js (version, additional languages, and theme)
     highlightjsVersion = "9.11.0"
@@ -31,6 +32,15 @@ ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
 
     MathJaxCDN = "//cdn.bootcss.com"
     MathJaxVersion = "2.7.1"
+	
+	# Sidebar profile picture
+	profilepic = "img/sal.png" 
+	
+	#Social buttons for sidebar
+	# Each of these are optional
+	[[params.socialbuttons]]
+	favicon = "github"
+	url = "https://github.com/smsalaken"
 
     [params.logo]
     url = "logo.png"
