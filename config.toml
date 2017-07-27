@@ -1,4 +1,4 @@
-baseurl = "/"
+baseurl = "smsalaken.github.io"
 relativeurls = true
 languageCode = "en-us"
 title = "Salekin Mushfik"
@@ -23,7 +23,10 @@ ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
 [params]
     description = "Personal website for Salekin Mushfik"
 	header = "Thoughts and code snippets"
-
+	
+	# Sidebar profile picture
+	profilepic = "static/img/sal.png" 
+	
     # options for highlight.js (version, additional languages, and theme)
     highlightjsVersion = "9.11.0"
     highlightjsCDN = "//cdn.bootcss.com"
@@ -33,8 +36,7 @@ ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
     MathJaxCDN = "//cdn.bootcss.com"
     MathJaxVersion = "2.7.1"
 	
-	# Sidebar profile picture
-	profilepic = "img/sal.png" 
+	
 	
 	#Social buttons for sidebar
 	# Each of these are optional
