@@ -47,7 +47,7 @@ p2 <- ggplot(df_processed_CF,
                     legend.title=element_blank())
 
 # hack for ggplots as it does not support dual axis
-# due it the conpect being inherently flawed in plotting thoery
+# due to the conpect being inherently flawed in plotting thoery
 # See the discussion : https://stackoverflow.com/a/3101876/7860688
 
 library(ggplot2)
@@ -66,7 +66,7 @@ g <- gtable_add_grob(g1,
                      pp$t, pp$l, pp$b, pp$l)
 
 # axis tweaks
-# depending on platform, layut name may change.
+# depending on platform, layout name may change.
 # use print(g$layout) to find the correct one
 
 ia <- which(g2$layout$name == "axis-l")   
@@ -83,7 +83,7 @@ g <- gtable_add_cols(g,
 g <- gtable_add_grob(g, ax, pp$t, length(g$widths) - 1, pp$b)
 
 # depending on platform, this may change.
-# use print(g$layout) to find the correct one
+# use print(g$layout) to find the correct name
 ia2 <- which(g2$layout$name == "ylab")   
 ga2 <- g2$grobs[[ia2]]                   
 ga2$rot <- 90

@@ -1,0 +1,36 @@
+---
+title: Printing pyramid with R
+author: Salekin Mushfik
+date: '2017-08-02'
+slug: printing-pyramid-with-r
+categories:
+  - interview
+tags:
+  - r
+---
+
+I recently attended an interview where one of the programming questions asked to solve a very basic programming problem. The target of questions like these is not to see if you can write the most efficient code, but to see how you approach the problem. This particular question asked to print a pyramid of stars for a given depth. 
+
+Below is a code to achieve this output in `r`. This is not the most efficient code, but it shows a simple method. Since I decided to document interview questions like this, I am posting it here.
+
+```{r}
+
+###########################################
+###    print a pyramid of stars  ##########
+###########################################
+
+# determine the depth of pyramid
+n <- 8
+
+for (i in seq(1,n)){
+  # if the depth is meaningless, return empty space
+  if(n < 1) {
+    print('')
+  }else {
+    # otherwise, print the pyramid
+    print(c(rep('', n-i),rep(c('*',''), i)))
+      }
+    
+  }
+
+```
