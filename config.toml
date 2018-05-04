@@ -1,10 +1,12 @@
 baseurl = "http://smsalaken.github.io"
 title = "Salekin Mushfik"
 languageCode = "en-us"
-#disqusShortname = "your_disqus_shortname" # Optional, enable Disqus integration
+disqusShortname = "smsalaken" #"your_disqus_shortname" # Optional, enable Disqus integration
 MetaDataFormat = "toml"
 theme = "hyde-x"
 paginate = 10
+publishDir = "/Users/syedmoshfeqsalaken/Documents/smsalaken.github.io"
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 [author]
     name = "Salekin Mushfik"

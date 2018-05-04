@@ -1,0 +1,21 @@
+---
+title: Decision diagram for AWS storage and database
+author: Salekin Mushfik
+date: '2017-10-04'
+slug: decision-diagram-for-aws-storage-and-database
+categories:
+  - AWS
+tags:
+  - Solution architecture
+output: html_document
+---
+As part of getting certified in AWS solution architect - associate, I built a simple logical diagram to help deciding between various storage and database options available in AWS cloud platform. 
+It is current as of September 2017 and correct to the best of my understanding.
+
+```{r fig.width=100, fig.height=100,echo=FALSE}
+library(png)
+library(grid)
+img <- readPNG("AWS_decision_diagram.png")
+ grid.raster(img)
+```
+

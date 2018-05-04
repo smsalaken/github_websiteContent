@@ -1,0 +1,47 @@
+---
+title: Realtime Sentiment Analysis using Apache Ni-Fi, R and Shiny web app
+author: 'Salekin Mushfiq'
+date: '2018-02-14'
+slug: realtime-sentiment-analysis-using-apache-ni-fi-r-and-shiny-web-app
+categories:
+  - visualization
+tags:
+  - Shiny
+  - r
+  - sentiment analysis
+output: html_document
+---
+
+Imagine doing a sentiment analysis on an ongoing event based on realtime Twitter feed. Twitter will give you a lot of tweets, and you can use R, Python or any other language to collect them. But what happens if you want to do that for a really long time with running a R/Python function in the background i.e. how do you handle streaming? The open source world has provided us with a couple of alternatives which can handle terabytes of streaming data. Apache Ni-Fi is one of them.
+
+This is my first take at using Ni-Fi to run some sentiment analysis on realtime twitter feed. The workflow is amazingly simple. Set up a dataflow using Ni-Fi, collect the tweets in a json file within a directory, run R to perform a simple sentiment analysis and then create a shiny (R)  dashboard to show the sentiment. 
+
+I started with the aim to do the anlysis on a particular Twitter profile, Donald Trump being the profile of my attention. I rightly assumed (which was later proved by sentiment analysis, of course) he will be posting a lot of hateful and negative sentiment, but I lost my intereset on his tweets very quickly. I guess negative emotions (or his perspective on things) are not too attractive for me. However, in the course, I figured out a way to retrieve full tweets from a particular person from a lot of retweets.
+
+Next I focused on two different topics, sports and politics, and wanted to see how people express their emotions on these subjects. I filtered tweets for these two topics using seperate Ni-Fi dataflow and keep the process running while I started my shiny dashboard. You can see a screenshot of the dashboard below. 
+
+```{r echo=FALSE, out.width='100%'}
+knitr::include_graphics('/post/shiny_dash_sent_nifi.png')
+```
+
+
+## Sentiment on Politics:
+![](/post/politics_sentiment.gif)
+
+## Sentiment on Sports: 
+Notice the balls on negatove sentiments are spreading less!!
+![](/post/sport_sentiment.gif)
+
+## Ni-Fi dataflow graph:
+
+The dataflow can be set-up as shown below:
+```{r echo=FALSE, out.width='100%'}
+knitr::include_graphics('/post/nifi_flow_sent.png')
+```
+
+
+## Source code:
+If you want to play with the data or code, go to this github repo: https://github.com/smsalaken/sentiment_analysis_NiFi_R
+
+Ni-Fi flow to find tweets from a particular profile can be found in ```'Ni-Fi templates/twitter_people_onPeople.xml'```
+

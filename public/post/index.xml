@@ -37,7 +37,7 @@ Below is a code to achieve this output in r. This is not the most efficient code
       
       <guid>/blog/2017/07/27/gantt-chart-using-gvis/</guid>
       <description>Gantt chart can be very useful to visualize the occurance of certain events on a timeline. If you need create one programmetically, you can use gvis package which utilizes plotting library from Google.
-# get the datadf &amp;lt;- data_get() # make sure you get the data here# convert time to decimal hours, remove if not requireddf$start.ct &amp;lt;- as.POSIXct(paste(df$`Date Time`, df$start, sep = &amp;quot; &amp;quot;))df$end.ct &amp;lt;- as.POSIXct(paste(df$`Date Time`, df$end, sep = &amp;quot; &amp;quot;))df$start.</description>
+# get the data df &amp;lt;- data_get() # make sure you get the data here # convert time to decimal hours, remove if not required df$start.ct &amp;lt;- as.POSIXct(paste(df$`Date Time`, df$start, sep = &amp;quot; &amp;quot;)) df$end.ct &amp;lt;- as.POSIXct(paste(df$`Date Time`, df$end, sep = &amp;quot; &amp;quot;)) df$start.</description>
     </item>
     
   </channel>

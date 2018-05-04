@@ -1,0 +1,127 @@
+---
+title: 'Shiny:: select input controlled by previous and next button'
+author: Salekin
+date: '2017-10-26'
+slug: shiny-select-input-controlled-by-previous-and-next-button
+categories:
+  - visualization
+tags:
+  - Shiny
+---
+
+If you ever need to provide a select input in shiny that must be controlled by a previous and a forward button, you may consider using the following piece of code. A possible use case is to allow user to browse through different product with having to click on the dropdown menu and select the desired item. For a long list, this manual process can be tedious and a previous/forward button pair would make more sense.
+
+### ui.R
+
+```{r eval = FALSE}
+# inspired by: https://gist.github.com/haozhu233/9dd15e7ba973de82f124
+library(shiny)
+library(shinyjs)
+shinyUI(
+  navbarPage("Demo", 
+             position = "static-top",
+             fluid = F,
+             
+             tabPanel("Demo",class="active",
+                      sidebarLayout(
+                        
+                        sidebarPanel(
+                          shinyjs::useShinyjs(),
+                          
+                          uiOutput("choose.date"),
+                                     tags$div(class="row",
+                                              tags$div(class="col-xs-6 text-center", uiOutput("prev_button.btn")),
+                                              tags$div(class="col-xs-6 text-center", uiOutput("next_button.btn")))
+                        ),
+                        mainPanel = (
+                          textOutput("dates.input")
+                        )
+                        )
+                      )
+             )
+  )
+```
+
+### server.R
+
+
+```{r eval = FALSE}
+library(shiny)
+library(shinyjs)
+
+# inspired by: https://gist.github.com/haozhu233/9dd15e7ba973de82f124
+
+shinyServer(function(input, output, session) {
+  session$onSessionEnded(function() {
+    stopApp()
+  })
+  
+  choiceList <- c("Item 1", "Item 2", "Item 3")
+  
+  
+  # ------- Select Input + previous/next week buttons---------------
+  output$choose.date <- renderUI({
+    selectInput("skus",
+                "Select SKU",
+                choices = choiceList)
+  }) 
+  
+  output$prev_button.btn <- renderUI({
+    actionButton("prev_button", 
+                 label = HTML("<span class='small'><i class='glyphicon glyphicon-arrow-left'></i> Back</span>"))
+  })
+  output$next_button.btn <- renderUI({
+    actionButton("next_button", 
+                 label = HTML("<span class='small'>Next <i class='glyphicon glyphicon-arrow-right'></i></span>"))
+  })
+  
+
+  observeEvent(input$prev_button, {
+    if(input$skus == choiceList[1]){
+      shinyjs::disable("prev_button")
+      shinyjs::enable("next_button")
+      updateSelectInput(session, "skus",
+                        label = "Select SKU",
+                        choices = choiceList,
+                        selected = choiceList[1])
+    } else{
+      shinyjs::enable("prev_button")
+      shinyjs::enable("next_button")
+      updateSelectInput(session, "skus",
+                        label = "Select SKU",
+                        choices = choiceList,
+                        selected = choiceList[match(input$skus, choiceList)-1])
+    } 
+    
+    
+    
+    
+    })
+  
+  observeEvent(input$next_button, {
+    
+    if(input$skus == choiceList[length(choiceList)]){
+      shinyjs::disable("next_button")
+      shinyjs::enable("prev_button")
+      updateSelectInput(session, "skus",
+                        label = "Select SKU",
+                        choices = choiceList,
+                        selected = choiceList[length(choiceList)])
+    } else{
+      shinyjs::enable("next_button")
+      shinyjs::enable("prev_button")
+      updateSelectInput(session, "skus",
+                        label = "Select SKU",
+                        choices = choiceList,
+                        selected = choiceList[match(input$skus, choiceList)+1])
+    } 
+    
+    
+    
+    })
+  
+  output$dates.input <- renderPrint({input$skus})
+})
+
+
+```
