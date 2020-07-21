@@ -23,7 +23,7 @@ You can see the full discussion here. https://stackoverflow.com/a/3101876/786068
 
 But, if you are not the one deciding what kind of graphs to build or do not want to lecture your client about plotting theory, here is a neat trick you can you. 
 
-```{r eval=FALSE}
+```
 # having a fill is important for bar and area if you want legends
 # If you don't get legends in the final plot after grid.draw(),
 # check if you are getting legends in p1 and p2 independently

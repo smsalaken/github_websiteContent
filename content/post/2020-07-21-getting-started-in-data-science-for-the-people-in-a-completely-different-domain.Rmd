@@ -1,0 +1,98 @@
+---
+title: Getting started in Data Science - For the people in a completely different
+  domain
+author: Salekin Syed
+date: '2020-07-21'
+slug: getting-started-in-data-science-for-the-people-in-a-completely-different-domain
+categories:
+  - career
+tags:
+  - how-to's
+lastmod: '2020-07-21T22:01:07+10:00'
+layout: post
+type: post
+highlight: no
+---
+You might be sitting at a pivot point in life where you decided to try something completely new and someone told you data science is interesting. You want to get started but the commonly available material is too technical for you to figure out how to get started. And you might be after some structured steps that will walk you through the basics and set you on the right track. If that's the case, this article is for you.
+
+Data science is a highly technical subject. The job of a data scientist requires a number of skills to begin with, and need constant learning and development of business acumen. But you need to start with the fundamentals if you are from a completely different field and have not done any coding in recent days. It doesn't matter if you're from arts or pure science, you will be able to get a job in data science if you can show your skills. And data science offers you the opportunity to showcase your skills in different ways. We will talk about those in a later post, but today the focus is on "how to get started"
+
+(*see the **Competitions** section at the bottom of the page for a link to quickly jump into ML part without going through the tools*).
+
+**Coding**
+
+This is where you start if you're completely new in the field. Programming and coding is fundamental to the data science job, and you will need to learn a lot of skills of a software developer. 
+
+Pick a data-centric programming language such as Python or R. I will suggest to go with Python if you're starting afresh, but I need to use both R and Python in my daily job.
+
+To begin, you will need some tools and set-ups, then you start learning and doing.
+
+* __Tools__: Tools are important as they define the pace you learn at, and the hiring engineers judge you based on this. 
+
+  * go through a very quick tutorial on Python, such as https://www.stavros.io/tutorials/python/ which will teach you the basics under 10 minutes. Remember, this is just the beginning. 
+  
+  * do the getting started course in Python offered by datacamp (https://www.datacamp.com/courses/introduction-to-data-science-in-python). Just do the free chapter to get a feel of using python and learning to import libraries. 
+  
+  * Download an IDE (aka integrated development environment) for writing your code. It is important to use a proper IDE since you're preparing for a job. I suggest Microsoft Visual Studio Code but you can also go with PyCharm community edition or spyder. If you are going with VS Code, download from here: https://code.visualstudio.com/. Do not pay for an IDE at this point of time.
+  
+  * download and install Anaconda from here: https://www.anaconda.com/products/individual. Do *not* install base python as it will require you to learn things a bit differently. And Anaconda is well accepted in most data science jobs.
+  
+  * Learn about virtual environment. This is applicable for base python, but the concept is applicable in Anaconda (aka conda ecosystem) and we will use this most of the time. Watch this 6 minutes video on YouTube: https://www.youtube.com/watch?v=4jt9JPoIDpY and read about it on here: https://realpython.com/python-virtual-environments-a-primer/. 
+  
+  * I know virtual environment feels complicated, but they are something you need to learn and use if you want to be a professional in the field. Let me see if I can write a very succint summary of virtual environment: __virtual environments allow you to use different versions of the same package in a single computer and helps to ensure change in one project is not affecting another__
+  
+  * For Anaconda distributions, we will use `conda environments` which is a similar concept to the virtuak environments but allows you to have project specific python version. Achieving this is more complicated in base python. Read about how to use conda environment here: https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html. Take note of using a `environment.yml` file in creating the environment, it will be very helpful.
+  
+  * __Choosing a terminal__: I hate to break this to you, but you need to use terminal as a data scientist. You will not be able to do everything from a GUI in your job. In windows, you can go with a mix of `cygwin` and `PowerShell` (I use both), `terminator` (for split windows) in Ubuntu/some other flavor of linux (but I doubt you will use them given you're reading this article), or `iTerm` if you're on a mac. Whatever you choose, download one and get started with. Please note you will need to configure some setting for `cygwin` so it starts working at your user directory (google this and you'll find a stackoverflow website).
+  
+  * You will also need to learn about git. But let's park that for now as it's not the focus right now. However, please keep this at the back of your mind and learn at your own pace. This is fundamental to version control methodology.
+  
+
+**Database and SQL** 
+
+As a data scientist, you will need to use data (duh, right?). But where does you data live? In most introductory or machine learning specific courses, the data will be contained in CSV files which is a plain text file and can be opened with notepad. However, for most of the business needs, the data will be in some sort of database. Depending on the scale of the operation and size of the data, it will be living in a traditional relation database, document database (aka noSQL), hadoop powered database (i.e. apache hive), spark clusters or some sort of cloud database that can scale upto several petabytes. Regardless, you need to learn the SQL (aka structured query language) to get insights and information from the data. The basics of SQL is same everywhere so learn any. I would suggest the following:
+
+  * Database : Get started with Postgres DB. Download and install a local instance of Postgres from here: https://www.postgresql.org/download/. Just use the plain, vaniall falvour of Postgres, you don't need any third party distribution right now.
+  
+  * Learn some SQL: Follow any free tutorial from the web. I have found https://www.postgresqltutorial.com/ to be relatively easy and better to deal with in terms of irrelevant advertisements. But feel free to use anything of your liking. I don't see a need to enrol in a paid course to learn SQL. 
+  
+  * Understand joins: You will find SQL incredibly easy to learn when you begin. Any `select` statement is easy to write, but please start learning joins. See this page on the previous tutorial website for a concept explanation along with working examples: https://www.postgresqltutorial.com/postgresql-joins/
+  
+  * Learn CTE (aka the `with` clause) and `coalesce` in addition to the joins.
+  
+  * Please note, SQL is a huge topic. I am still learning, and I will bet most people continues to learn throughout their career. But you need to have some working knowledge to get started in data science, you can then continue learning.
+  
+  * __IDE__: You will need an IDE to play with Postgres as well. I recently found DBeaver which is very well-crafter IDE for SQL. Please download (https://dbeaver.io/download/), install and then *connect* DBeaver with your locally installed Postgres instance. 
+  
+
+**Concepts**
+
+You are probably bored by now and thinking where exactly is the science and learning in this tutorial. Here it comes. Broadly speaking, you need to learn the basics of machine learning (ML), need to know enough statistics and need to be able to implement the ML and statistics components in your codes (which refers back to everything I mentioned above). I would like you to:
+
+  
+  * audit the machine learning course of the Andrew Ng on Coursera. He is dubbed as the godfather of AI, *helped* both Google and Baidu to build their capabilities, a Stanford professor and so many other things. If you can pay and do the full course, please do it. It will be one of the best purchases in the online learning and definitely worth the money.  Here is the link: https://www.coursera.org/learn/machine-learning You may consider applying for the financial aid. I did when I was doing PhD (I was on a limited stipend) and I was given it. I am thankful for that to this date. Also consider following him on LinkedIn and Twitter.
+  
+  * go through the video explaining the basic steps of Machine Learning workflow. This is from Google Cloud (https://www.youtube.com/watch?v=nKW8Ndu7Mjw)
+  
+  * learn some basic statistics from this extensive book (https://faculty.marshall.usc.edu/gareth-james/ISL/ISLR%20Seventh%20Printing.pdf) and the following topics: Hypothesis testing (see this Khan Academy tutorial: https://www.khanacademy.org/math/statistics-probability/significance-tests-one-sample), correlation (https://www.dummies.com/education/math/statistics/how-to-interpret-a-correlation-coefficient-r/), difference between correlation and causation (https://en.wikipedia.org/wiki/Correlation_does_not_imply_causation), normality in the dataset (https://en.wikipedia.org/wiki/Normality_test) and A/B testing (https://hbr.org/2017/06/a-refresher-on-ab-testing)
+  
+  * Please note, statistics is very broad topic and you need to keep learning. But these are basics to get started with and you will need to pick up a few things while you're learning the topics I mentioned above.
+  
+  * Once you have __started__ learning the ML and statistical concepts, I would encourage you to start practicing. Don't wait till you finish because you will, and I will guarantee this, lose motivation. You should never keep a months reading between starting and doing. 
+  
+
+**Libraries**
+
+No data scientist write all algorithms from scratch in their job. That would be reinventing the wheels. Instead, they use libraries written by many other people. In the world of Python, I will __strongly__ advise to start learing the `scikit-learn` library for machine learning algorithms. It contains almost all of the ML algorithms you will start at the beginning of your career. Start here (https://scikit-learn.org/stable/tutorial/basic/tutorial.html) and work your way through other pages. It will feel like browing through Wikipedia.
+
+Also learn the basic usage of `statsmodels` library which is primarily used for statsitical purposes. Focus on the significance testing/hypothesis testing part of the library to begin with. See https://www.statsmodels.org/ for a reference list of functions.
+Also learn 
+
+**Competitions**
+
+In my opinion, learning is best done by doing. Participating in competitions is a great way to do that. Sure, you will not win (although you probably have a good chance) but you will learn a great deal along the way. __Kaggle (https://www.kaggle.com/) offers toy competitions which walks you through the steps involed in machine learning.__ I would strongly suggest to complete all of these competitions (starting with the Titanic competition)  and then start participating in real competitions. Kaggle now offers free kernels so you don't even need to install Anaconda and IDEs.
+
+
+**Cloud**
+
+When you're done with most of the things I asked above, please remember to do learn some cloud staff. I would advise to do a course on Udemy for AWS solution architect (associate level) from `A Cloud Guru`. It will give you an understanding of the cloud basics. 

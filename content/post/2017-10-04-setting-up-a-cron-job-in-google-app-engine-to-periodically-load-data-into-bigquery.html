@@ -162,4 +162,3 @@ app = webapp2.WSGIApplication([
 <li><p>Deploy both the app and cron job configuration by running <code>gcloud app deploy app.yaml cron.yaml</code> and follow the terminal prompts.</p></li>
 </ol>
 <p>Once deployed, go to you app engine dashboard on Google cloud console and visit the task queue page. From here, you should be able to see the task you just set up in the cron tab. If you want to test your cronjob, just click on <code>Run now</code> button for the configured task. You are also able to go through the log for your cron task. Remember to increase timeout paramter if your task is running out of time.</p>
-<p></p>
