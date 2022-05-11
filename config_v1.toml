@@ -1,5 +1,5 @@
 baseurl = "http://smsalaken.github.io"
-title = "Salekin Mushfik"
+title = "Salaken Syed"
 languageCode = "en-us"
 disqusShortname = "smsalaken" #"your_disqus_shortname" # Optional, enable Disqus integration
 MetaDataFormat = "toml"
@@ -9,7 +9,7 @@ publishDir = "/Users/salaken/Documents/personal/smsalaken.github.io"
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 [author]
-    name = "Salekin Mushfik"
+    name = "Salaken Syed"
 
 [permalinks]
     # Optional. Change the permalink format for the 'post' content type.
@@ -32,7 +32,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
     # Used when a given page doesn't set its own.
     defaultDescription = "Random things on data science and machine learning by Salekin Mushfik"
-    defaultKeywords = "Salekin,Data Scientist in Melbourne,Machine learning,Data Engineer in Melbourne, Australia"
+    defaultKeywords = "Salaken, Data Scientist in Melbourne,Machine learning, Data Engineer in Melbourne, Australia"
 
     # Hide estimated reading time for posts.
     # Default (if omitted) is false.

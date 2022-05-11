@@ -2,7 +2,7 @@
 baseurl = "http://smsalaken.github.io"
 languageCode = "en"
 
-title = "Salekin"
+title = "Salaken Syed"
 theme = "hyde-hyde"
 
 
@@ -21,8 +21,8 @@ paginate = 5
 
 ## Site Settings
 [params]
-    author = "Salekin Syed"
-    title = "Salekin Syed"
+    author = "Salaken Syed"
+    title = "Salaken Syed"
     description = "My notes on data science, engineering and visualization"
     authorimage = "/img/sal2.jpg"
     dateformat = "Jan 2, 2006"
