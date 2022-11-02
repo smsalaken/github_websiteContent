@@ -1,0 +1,56 @@
+---
+title: Experiment design for (marketing) campaigns
+author: ''
+date: '2022-11-02'
+slug: experiment-design-for-marketing-campaigns
+categories: []
+tags: []
+lastmod: '2022-11-02T21:14:07+11:00'
+layout: post
+type: post
+highlight: no
+---
+
+
+
+<p><strong>In a marketing campaign we always need to measure the performance. This is typically done by looking at the performance difference of target and control group. </strong></p>
+<p>To effectively measure success, the business stakeholder will probably tell you about a few metrics they are interested about. However, it is up to the data scientist/analyst to set-up the experiment in a way that allows a statistically meaningful measurement. This needs to be done before launching the campaign. In many cases, I have seen the business stakeholder and campaign developers launching the campaign without consulting the data analyst/scientist, and they are only consulted when the business wanted to understand how their campaign is performing. Often, the campaign design is not ideal for measurements and the analysts need to cut corners and/or put a lot of caveats in their report.</p>
+<p>To avoid these issues, please make sure the experiment design process is followed during campaign development. I am going to briefly summarize the process below.</p>
+<blockquote>
+<p>Experiment design in a marketing campaign</p>
+</blockquote>
+<p>A marketing campaign is a form of A/B or A/B/C testing. It needs at least two groups: (1) <strong>target</strong>: who we contact from the campaign (aka who gets the treatment/offer) (2) <strong>control</strong>: who we don’t contact</p>
+<p>It is very important that target and control comes from the <em>same population</em>. In other words, both target and control needs to meet the eligibility/inclusion criteria for the campaign. They should <em>only differ by the contact (or lack thereof)</em> from the campaign.</p>
+<p>It is also of paramount importance that control group is large enough to guarantee a statistically significant outcome (be it positive or negative). This depends on a few things:</p>
+<ol style="list-style-type: decimal">
+<li>The population size (aka how many customer/accounts meet the eligibility criteria)</li>
+<li>What is the expected conversion rate in the control group (example: how many control customers, out of 100, are likely to apply for a home loan even if we don’t contact them)?</li>
+<li>What is the minimum improvement we <strong>should</strong> see in the target group? Please note, this is not the same as the expected conversion rate. <em>Rather, it is the minimum increase one should rationally/logically see in the success metric based on the nature of the campaign (aka it’s offer/proposition). Any improvement below this threshold will not be reliably detected in the measurement/PIR (post implementation review). Often, this comes from the business stakeholder and the hardest part.</em></li>
+</ol>
+<blockquote>
+<p>Here’s an example:</p>
+</blockquote>
+<p>Let’s say we work for a bank that offers home loans/mortgages. It offers both fixed rate mortgages and variable rate mortgages. Let’s say we want to run a campaign targeting the variable rate cohort where the customer has a minimum deposit of $50k in their savings account. The campaign will attempt to encourage these customers to apply for a new home loan with our bank (which we often refer to as the treatment from the campaign). Then:</p>
+<ol style="list-style-type: decimal">
+<li><strong>Step-1</strong>: We find there are 2,000 customers eligible for this campaign.</li>
+<li><strong>Step-2</strong>: Historically, we know ~4% customers with over $50k in their savings account applies for a home loan within 3 months of reaching that $50k savings. This will be used as the expected conversion rate in the control group. <em>Typically we get this information by looking into historical data.</em></li>
+<li><strong>Step-3</strong>: Now we estimate, based on reasoning - not data, what should be the minimum increase in the home loans application rate given we’re asking them to apply for a home loan with our bank (i.e. in the target group). <em>This is often the hardest part to justify and almost always need involvement from business stakeholders</em>. For the purpose of this example, let’s say this to be 8%.</li>
+</ol>
+<p>Once we know these 3 numbers, let’s calculate a few more:</p>
+<ul>
+<li><p>Let’s assume we will do a 5% split (i.e. 5% of the eligible population will go to the control group whereas 95% will be contacted from the campaign).</p></li>
+<li><p>Initial size for the target group: 95% of 2,000 (from Step-1) = 1,900 customers</p></li>
+<li><p>Initial size for the control group: 5% of 2,000 = 100 customers</p></li>
+<li><p>Proportion for the target group: 8% of 1,900 (from Step-3) = 152 customers</p></li>
+<li><p>Proportion for the control group: 4% of 100 (from Step-2) = 4 customers</p></li>
+<li><p>Calculate the statistical significance using a calculator (no point doing that manually). Use numbers for the calculated proportions and size for both groups from above. An example calculator can be found here: <a href="https://www.surveymonkey.com/mp/ab-testing-significance-calculator/" class="uri">https://www.surveymonkey.com/mp/ab-testing-significance-calculator/</a> . In our case, the result is the following:
+<img src="/post/2022-11-02-experiment-design-for-marketing-campaigns_files/campaign_design_AB_testing_insignificant.png" style="width:100.0%" /></p></li>
+<li><p>Clearly, the result is not statistically significant. This means we cannot reliably detect a 4% difference between target and control group with our sample size if we put only 5% in the control group.</p></li>
+<li><p>To fix that, we either need to assume the minimum logical difference between target and control is higher, or we need to increase the control group size. The latter is much easier in practice.</p></li>
+<li><p>Let’s say, for the purpose of illustration in this example, we now allocate 10% in the control group (i.e. 10% of 2,000 = 200 customers). Therefore, we now have 1,800 customers in the target and 200 in the control group.</p></li>
+<li><p>With the assumed performance in the target and control group, proportions for target is now 8% of 1,800 = 144. Similarly, control proportion is 4% of 200 = 8</p></li>
+<li><p>Let’s input the numbers in the online calculator again:<img src="/post/2022-11-02-experiment-design-for-marketing-campaigns_files/campaign_design_AB_test_significant.png" style="width:100.0%" /></p></li>
+<li><p>Viola, now the result is statistically significant.</p></li>
+</ul>
+<p>This simply indicates that, to be able to reliably detect a 4% difference (in absolute terms, not relative - which will be uplift), we will need to allocate at least 10% of the population to the control group.</p>
+<p>Hope this gives you some guidance on target-control splitting in your next campaign design. Please leave a comment if you find any issue or want to make a suggestion, or simply want to connect.</p>
