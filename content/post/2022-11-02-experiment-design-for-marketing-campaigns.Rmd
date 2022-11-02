@@ -57,6 +57,16 @@ Once we know these 3 numbers, let's calculate a few more:
 
 This simply indicates that, to be able to reliably detect a 4% difference (in absolute terms, not relative - which will be uplift), we will need to allocate at least 10% of the population to the control group. 
 
+### Summary:
+
++ If the target group does not deliver more than 4% improvement in absolute terms, we cannot conclude the result is reliable. We will have to conclude that any measured improvement under 4% may have occurred due to random chances. This is because we have assumed the minimum detectable difference to be (8%, in target - 4%, in control) = 4%
++ If the target group delivers an improvement more than 4%, we will be able to reliably detect the improvement.
++ We need to start from a smaller sample size and increase until we get a statistically significant result. This will ensure we're contacting as many customers as possible from the campaign. This will help to financially justify the campaign. **Remember, every lead/customer in control group is potentially a lost opportunity.** 
+
++     We often need a few iterations to find the minimum control group size that will deliver a detectable difference between control and target group performance.
++ Often, the minimum logical difference between target and control cannot be altered.Therefore, we need to adjust the control group size.
++ The target and control group members *must be picked randomly from the eligible population*. This must be adhered to if you want to see the campaign delivering real results.
+
 Hope this gives you some guidance on target-control splitting in your next campaign design. Please leave a comment if you find any issue or want to make a suggestion, or simply want to connect.
 
 
